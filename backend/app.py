@@ -4,6 +4,18 @@ import os
 
 app = Flask(__name__)
 db_file = os.environ.get("db_file") or os.path.join(os.path.dirname(__file__), "db.json")
+CORS_ORIGINS = {"http://localhost:5173", "http://127.0.0.1:5173"}
+
+
+@app.after_request
+def add_cors_headers(response):
+    origin = request.headers.get("Origin")
+    if origin in CORS_ORIGINS:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Access-Control-Allow-Methods"] = "GET, POST, PATCH, DELETE, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+        response.headers.add("Vary", "Origin")
+    return response
 
 def load():
     if not os.path.exists(db_file):
