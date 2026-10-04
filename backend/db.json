@@ -1,74 +1,94 @@
 {
-  "samsung_phones": [
-    {
-      "id": 1,
-      "name": "Galaxy S26 Ultra",
-      "model": "SM-S948B",
-      "colour": "Titanium Black",
-      "price": 171400.00
-    },
+  "inventory": [
     {
       "id": 2,
-      "name": "Galaxy S26+",
-      "model": "SM-S946B",
-      "colour": "Onyx Green",
-      "price": 144400.00
+      "barcode": "0731415123456",
+      "product": {
+        "product_name": "Plain Greek Yogurt",
+        "brands": "Olympus",
+        "ingredients_text": "Cultured pasteurized grade A milk, live and active cultures."
+      }
     },
     {
       "id": 3,
-      "name": "Galaxy S26",
-      "model": "SM-S941B",
-      "colour": "Marble Gray",
-      "price": 120900.00
+      "barcode": "0051500240123",
+      "product": {
+        "product_name": "Smooth Peanut Butter",
+        "brands": "NuttyCo",
+        "ingredients_text": "Roasted peanuts, sugar, palm oil, salt."
+      }
     },
     {
       "id": 4,
-      "name": "Galaxy Z Fold6",
-      "model": "SM-F956B",
-      "colour": "Navy",
-      "price": 250000.00
+      "barcode": "0038000123987",
+      "product": {
+        "product_name": "100% Whole Grain Rolled Oats",
+        "brands": "GrainBest",
+        "ingredients_text": "Natural whole grain rolled oats."
+      }
     },
     {
       "id": 5,
-      "name": "Galaxy Z Flip6",
-      "model": "SM-F741B",
-      "colour": "Mint",
-      "price": 132000.00
+      "barcode": "3046920027008",
+      "product": {
+        "product_name": "70% Dark Chocolate",
+        "brands": "CacaoLux",
+        "ingredients_text": "Cocoa mass, sugar, cocoa butter, soy lecithin."
+      }
     },
     {
       "id": 6,
-      "name": "Galaxy A57 5G",
-      "model": "SM-A576B",
-      "colour": "Awesome Iceblue",
-      "price": 45000.00
+      "barcode": "5000119039012",
+      "product": {
+        "product_name": "Classic Tomato Ketchup",
+        "brands": "TomatoesRUs",
+        "ingredients_text": "Tomato paste, vinegar, high fructose corn syrup, salt, spice extracts."
+      }
     },
     {
       "id": 7,
-      "name": "Galaxy A37 5G",
-      "model": "SM-A376B",
-      "colour": "Awesome Navy",
-      "price": 37499.00
+      "barcode": "8001120987654",
+      "product": {
+        "product_name": "Extra Virgin Olive Oil",
+        "brands": "Mediterra",
+        "ingredients_text": "100% extra virgin olive oil."
+      }
     },
     {
       "id": 8,
-      "name": "Galaxy A16 4G",
-      "model": "SM-A165F",
-      "colour": "Light Green",
-      "price": 21500.00
+      "barcode": "4014400901234",
+      "product": {
+        "product_name": "Whole Wheat Bread",
+        "brands": "BakeHouse",
+        "ingredients_text": "Whole wheat flour, water, yeast, sugar, salt, vegetable oil."
+      }
     },
     {
       "id": 9,
-      "name": "Galaxy A07s",
-      "model": "SM-A077F",
-      "colour": "Black",
-      "price": 17199.00
+      "barcode": "0688200112233",
+      "product": {
+        "product_name": "Pure Raw Honey",
+        "brands": "BeeSweet",
+        "ingredients_text": "100% pure raw honey."
+      }
     },
     {
       "id": 10,
-      "name": "Galaxy S25 FE 5G",
-      "model": "SM-S736B",
-      "colour": "Graphite",
-      "price": 80999.00
+      "barcode": "0210006123459",
+      "product": {
+        "product_name": "Sharp Cheddar Cheese",
+        "brands": "DairyFarms",
+        "ingredients_text": "Pasteurized milk, cheese cultures, salt, enzymes."
+      }
+    },
+    {
+      "id": 11,
+      "barcode": "123",
+      "product": {
+        "product_name": "Apple",
+        "brands": "Farm",
+        "ingredients_text": "Fresh"
+      }
     }
   ]
 }
