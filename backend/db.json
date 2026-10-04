@@ -107,6 +107,15 @@
         "brands": "Ferrero",
         "ingredients_text": "sugar, palm oil, hazelnuts, skimmed milk powder, fat reduced cocoa, emulsifier, vanillin"
       }
+    },
+    {
+      "id": 13,
+      "barcode": "a2o3946",
+      "product": {
+        "product_name": "food",
+        "brands": "kenpoly",
+        "ingredients_text": "sukuma"
+      }
     }
   ]
 }
