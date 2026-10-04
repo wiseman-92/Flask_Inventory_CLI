@@ -1,6 +1,15 @@
 {
   "inventory": [
     {
+      "id": 1,
+      "barcode": "0041220534958",
+      "product": {
+        "product_name": "Organic Almond Milk",
+        "brands": "PureBlend",
+        "ingredients_text": "Filtered water, almonds, cane sugar, sea salt."
+      }
+    },
+    {
       "id": 2,
       "barcode": "0731415123456",
       "product": {
@@ -83,11 +92,20 @@
     },
     {
       "id": 11,
-      "barcode": "123",
+      "barcode": "3017624010701",
       "product": {
-        "product_name": "Apple",
-        "brands": "Farm",
-        "ingredients_text": "Fresh"
+        "product_name": "Nutella",
+        "brands": "Ferrero",
+        "ingredients_text": "sugar, palm oil, hazelnuts, skimmed milk powder, fat reduced cocoa, emulsifier, vanillin"
+      }
+    },
+    {
+      "id": 12,
+      "barcode": "3017624010701",
+      "product": {
+        "product_name": "Nutella",
+        "brands": "Ferrero",
+        "ingredients_text": "sugar, palm oil, hazelnuts, skimmed milk powder, fat reduced cocoa, emulsifier, vanillin"
       }
     }
   ]

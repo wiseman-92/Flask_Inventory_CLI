@@ -93,4 +93,13 @@ def delete_inventory(id):
 
     
 if __name__ == "__main__":
-    app.run(port=5555, debug=True)
+    import sys
+
+    if "--cli" in sys.argv:
+        PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        if PROJECT_ROOT not in sys.path:
+            sys.path.insert(0, PROJECT_ROOT)
+        from cli_frontend.apicli import main
+        main()
+    else:
+        app.run(port=5555, debug=True)
