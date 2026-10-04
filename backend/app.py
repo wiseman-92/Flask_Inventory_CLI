@@ -7,12 +7,17 @@ db_file = os.environ.get("db_file") or os.path.join(os.path.dirname(__file__), "
 
 def load():
     if not os.path.exists(db_file):
-        return {"samsung_phones": []}
+        return {"inventory": []}
     with open(db_file, "r", encoding="utf-8") as f:
         try:
-            return json.load(f)
+            data = json.load(f)
+            if data is None:
+                return {"inventory": []}
+            if "inventory" not in data:
+                data["inventory"] = []
+            return data
         except json.JSONDecodeError:
-            return {"samsung_phones": []}
+            return {"inventory": []}
 
 def save(data):
     with open(db_file, "w", encoding="utf-8") as f:
@@ -22,12 +27,12 @@ def save(data):
 @app.route('/inventory', methods=['GET'])
 def disp_inventory():
     db = load()
-    return jsonify(db["samsung_phones"]), 200
+    return jsonify(db["inventory"]), 200
 
 @app.route('/inventory/<int:id>', methods=['GET'])
 def dynamic_inventory(id):
     db = load()
-    data = next((data for data in db['samsung_phones'] if data['id']==id), None)
+    data = next((data for data in db['inventory'] if data['id']==id), None)
     if data:
         return jsonify(data), 200
     else:
@@ -37,44 +42,49 @@ def dynamic_inventory(id):
 def add_inventory():
     db = load()
     data = request.get_json()
-    curr_ids = [item['id'] for item in db["samsung_phones"]]
-    next_ids= max(curr_ids, default=0) + 1
+    curr_ids = [item['id'] for item in db["inventory"]]
+    next_ids = max(curr_ids, default=0) + 1
 
+    product_data = data.get("product", data)
     new_item = {
       "id": next_ids,
-      "name": data["name"],
-      "model": data["model"],
-      "colour": data["colour"],
-      "price": float(data["price"])
+      "barcode": data["barcode"],
+      "product": {
+        "product_name": product_data.get("product_name", data.get("product_name")),
+        "brands": product_data.get("brands", data.get("brands")),
+        "ingredients_text": product_data.get("ingredients_text", data.get("ingredients_text"))
+      }
     }
-    db["samsung_phones"].append(new_item)
+    db["inventory"].append(new_item)
     save(db)
     return jsonify(new_item), 201
 
 @app.route('/inventory/<int:id>', methods=['PATCH'])
 def edit_inventory(id):
     db = load()
-    data = next((item for item in db["samsung_phones"] if item["id"]==id ), None)
+    data = next((item for item in db["inventory"] if item["id"]==id ), None)
     if not data:
         return jsonify({"Error": "Item not found"}), 404
     items = request.get_json()
-    if "name" in items:
-        data["name"] = items["name"]
-    if "model" in items:
-        data["model"] = items["model"]
-    if "colour" in items:
-        data["colour"] = items["colour"]
-    if "price" in items:
-        data["price"] = float(items["price"])
+    if "barcode" in items:
+        data["barcode"] = items["barcode"]
+
+    product_data = items.get("product", items)
+    if "product_name" in product_data:
+        data.setdefault("product", {})["product_name"] = product_data["product_name"]
+    if "brands" in product_data:
+        data.setdefault("product", {})["brands"] = product_data["brands"]
+    if "ingredients_text" in product_data:
+        data.setdefault("product", {})["ingredients_text"] = product_data["ingredients_text"]
 
     save(db)
     return jsonify(data), 200
 @app.route('/inventory/<int:id>', methods=['DELETE'])
 def delete_inventory(id):
     db = load()
-    length = len(db["samsung_phones"])
-    db["samsung_phones"] = [i for i in db["samsung_phones"] if i["id"]!=id]
-    if len(db["samsung_phones"]) < length:
+    length = len(db["inventory"])
+    db["inventory"] = [i for i in db["inventory"] if i["id"]!=id]
+    if len(db["inventory"]) < length:
         save(db)
         return jsonify({"message": "deleted succesfully"}), 200
     else:
