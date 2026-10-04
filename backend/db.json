@@ -1,0 +1,74 @@
+{
+  "samsung_phones": [
+    {
+      "id": 1,
+      "name": "Galaxy S26 Ultra",
+      "model": "SM-S948B",
+      "colour": "Titanium Black",
+      "price": 171400.00
+    },
+    {
+      "id": 2,
+      "name": "Galaxy S26+",
+      "model": "SM-S946B",
+      "colour": "Onyx Green",
+      "price": 144400.00
+    },
+    {
+      "id": 3,
+      "name": "Galaxy S26",
+      "model": "SM-S941B",
+      "colour": "Marble Gray",
+      "price": 120900.00
+    },
+    {
+      "id": 4,
+      "name": "Galaxy Z Fold6",
+      "model": "SM-F956B",
+      "colour": "Navy",
+      "price": 250000.00
+    },
+    {
+      "id": 5,
+      "name": "Galaxy Z Flip6",
+      "model": "SM-F741B",
+      "colour": "Mint",
+      "price": 132000.00
+    },
+    {
+      "id": 6,
+      "name": "Galaxy A57 5G",
+      "model": "SM-A576B",
+      "colour": "Awesome Iceblue",
+      "price": 45000.00
+    },
+    {
+      "id": 7,
+      "name": "Galaxy A37 5G",
+      "model": "SM-A376B",
+      "colour": "Awesome Navy",
+      "price": 37499.00
+    },
+    {
+      "id": 8,
+      "name": "Galaxy A16 4G",
+      "model": "SM-A165F",
+      "colour": "Light Green",
+      "price": 21500.00
+    },
+    {
+      "id": 9,
+      "name": "Galaxy A07s",
+      "model": "SM-A077F",
+      "colour": "Black",
+      "price": 17199.00
+    },
+    {
+      "id": 10,
+      "name": "Galaxy S25 FE 5G",
+      "model": "SM-S736B",
+      "colour": "Graphite",
+      "price": 80999.00
+    }
+  ]
+}
